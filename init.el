@@ -103,6 +103,9 @@
 ;; Customization
 ;;;;
 
+;; set a better font
+(set-default-font "Courier New-13")
+
 ;; Disable top toolbar
 (tool-bar-mode -1)
 

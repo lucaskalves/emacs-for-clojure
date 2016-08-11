@@ -656,7 +656,7 @@
 	    ((:url . "http://elpa.gnu.org/packages/pinentry.html")
 	     (:keywords "gnupg"))])
  (poker .
-	[(0 1)
+	[(0 2)
 	 nil "Texas hold 'em poker" single
 	 ((:url . "http://elpa.gnu.org/packages/poker.html")
 	  (:keywords "games"))])
