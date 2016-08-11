@@ -16,6 +16,7 @@
 ;;                          ("melpa" . "http://melpa-stable.milkbox.net/packages/")))
 
 
+
 ;; Load and activate emacs packages. Do this first so that the
 ;; packages are loaded before you start trying to modify them.
 ;; This also sets the load path.
@@ -102,6 +103,9 @@
 ;; Customization
 ;;;;
 
+;; Disable top toolbar
+(tool-bar-mode -1)
+
 ;; Add a directory to our load path so that when you `load` things
 ;; below, Emacs knows where to look for the corresponding file.
 (add-to-list 'load-path "~/.emacs.d/customizations")
@@ -130,3 +134,6 @@
 ;; Langauage-specific
 (load "setup-clojure.el")
 (load "setup-js.el")
+
+;; Noctilus Theme
+(load-theme 'noctilux t)
