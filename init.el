@@ -106,6 +106,16 @@
 ;; set a better font
 (set-default-font "Courier New-13")
 
+;; config projectile
+(projectile-global-mode)
+(setq projectile-enable-caching nil)
+(setq projectile-indexing-method 'alien) 
+
+
+;; shortcut to sidebar tree view
+(require 'neotree)
+(global-set-key [f8] 'neotree-toggle)
+
 ;; Disable top toolbar
 (tool-bar-mode -1)
 
