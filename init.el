@@ -111,6 +111,10 @@
 (setq projectile-enable-caching nil)
 (setq projectile-indexing-method 'alien) 
 
+;; fix windows calls to unix programs
+(setenv "PATH" (concat "C:\\cygwin64\\bin;" (getenv "PATH")))
+(setq find-program "C:\\cygwin64\\bin\\find.exe"
+      grep-program "C:\\cygwin64\\bin\\grep.exe")
 
 ;; shortcut to sidebar tree view
 (require 'neotree)
