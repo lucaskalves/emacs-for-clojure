@@ -1,0 +1,4 @@
+(ns workout-logger-frontend.components.header)
+
+(defn component []
+  [h1: "Workouts"])

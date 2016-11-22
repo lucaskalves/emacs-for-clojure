@@ -10,6 +10,8 @@
              '("tromey" . "http://tromey.com/elpa/") t)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 
 ;; (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
 ;;                          ("marmalade" . "http://marmalade-repo.org/packages/")
@@ -103,6 +105,11 @@
 ;; Customization
 ;;;;
 
+;; better scrolling
+;(require 'sublimity)
+;(require 'sublimity-scroll)
+;(sublimity-mode 1)
+
 ;; set a better font
 (set-default-font "Courier New-13")
 
@@ -115,6 +122,9 @@
 (setenv "PATH" (concat "C:\\cygwin64\\bin;" (getenv "PATH")))
 (setq find-program "C:\\cygwin64\\bin\\find.exe"
       grep-program "C:\\cygwin64\\bin\\grep.exe")
+
+;; add bin folder to path
+ (setq exec-path (append exec-path '("C:\\Users\i851292\bin")))
 
 ;; shortcut to sidebar tree view
 (require 'neotree)
@@ -152,8 +162,8 @@
 (load "setup-clojure.el")
 (load "setup-js.el")
 
-;; Noctilus Theme
-(load-theme 'foggy-night t)
+;; Theme
+(load-theme 'tango-dark t)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -162,10 +172,17 @@
  '(coffee-tab-width 2)
  '(custom-safe-themes
    (quote
-    ("9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" "52588047a0fe3727e3cd8a90e76d7f078c9bd62c0b246324e557dfa5112e0d0c" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default))))
+    ("d606ac41cdd7054841941455c0151c54f8bff7e4e050255dbd4ae4d60ab640c1" "1157a4055504672be1df1232bed784ba575c60ab44d8e6c7b3800ae76b42f8bd" "0c311fb22e6197daba9123f43da98f273d2bfaeeaeb653007ad1ee77f0003037" "9e54a6ac0051987b4296e9276eecc5dfb67fdcd620191ee553f40a9b6d943e78" "52588047a0fe3727e3cd8a90e76d7f078c9bd62c0b246324e557dfa5112e0d0c" "a8245b7cc985a0610d71f9852e9f2767ad1b852c2bdea6f4aadc12cce9c4d6d0" "d677ef584c6dfc0697901a44b885cc18e206f05114c8a3b7fde674fce6180879" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
+ '(markdown-command "marked"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; flymd
+(defun my-flymd-browser-function (url)
+  (let ((browse-url-browser-function 'browse-url-firefox))
+    (browse-url (concat "file://" url))))
+(setq flymd-browser-open-function 'my-flymd-browser-function)
